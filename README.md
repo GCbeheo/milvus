@@ -17,6 +17,7 @@ helm upgrade --install etcd oci://registry-1.docker.io/bitnamicharts/etcd -f val
 ```
 
 ## Install helm chart milvus with "values.yaml"
+### Fill in kafka's username and password in the last line in "values.yaml"
 ```bash
 helm upgrade --install milvus milvus/milvus -f values.yaml -n milvus
 ```
