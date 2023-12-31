@@ -896,7 +896,7 @@ externalPulsar:
   tenant: public
   namespace: default
   authPlugin: "org.apache.pulsar.broker.authorization.PulsarAuthorizationProvider"
-  authParams: "<token>"
+  authParams: "<token_in_secret_of_namespace_pulsar>"
 
 ###################################
 # External kafka
