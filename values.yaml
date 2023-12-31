@@ -578,7 +578,7 @@ etcd:
 ##
 
 pulsar:
-  enabled: true
+  enabled: false
   name: pulsar
 
   fullnameOverride: ""
@@ -889,14 +889,14 @@ externalEtcd:
 # - these configs are only used when `externalPulsar.enabled` is true
 ###################################
 externalPulsar:
-  enabled: false
-  host: localhost
+  enabled: true
+  host: <cluster_IP_svc_pulsar>
   port: 6650
   maxMessageSize: "5242880"  # 5 * 1024 * 1024 Bytes, Maximum size of each message in pulsar.
   tenant: public
   namespace: default
-  authPlugin: ""
-  authParams: ""
+  authPlugin: "org.apache.pulsar.broker.authorization.PulsarAuthorizationProvider"
+  authParams: "<token>"
 
 ###################################
 # External kafka
@@ -909,4 +909,4 @@ externalKafka:
   sasl:
     mechanisms: PLAIN
     username: "user1"
-    password: "J5qJdasa5p"
+    password: "<password>"
