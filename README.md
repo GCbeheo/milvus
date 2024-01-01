@@ -43,7 +43,8 @@ password: <kubectl get secret kafka-user-passwords --namespace kafka -o jsonpath
 ```bash
 waiting me
 ```
-### You can edit pvc storage
+### You can edit pvc storage in each file "values"
+
 ```bash
 helm upgrade --install milvus milvus/milvus -f values.yaml -n milvus --create-namespace
 ```
