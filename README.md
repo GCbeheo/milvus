@@ -45,6 +45,7 @@ waiting me
 ```
 ### You can edit pvc storage in each file "values"
 
+## finally intall Milvus with "values.yaml"
 ```bash
 helm upgrade --install milvus milvus/milvus -f values.yaml -n milvus --create-namespace
 ```
