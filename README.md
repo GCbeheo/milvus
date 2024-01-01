@@ -35,7 +35,14 @@ helm install pulsar apache/pulsar --timeout 10m -f values_pulsar.yaml -n pulsar
 
 ## Install helm chart milvus with "values.yaml"
 ### Fill externalKafka with value: "username", "password" in "values.yaml"
+```bash
+username: "user1"
+password: <kubectl get secret kafka-user-passwords --namespace kafka -o jsonpath='{.data.client-passwords}' | base64 -d | cut -d , -f 1>
+```
 ### Fill externalPulsar with value: "host", "authPlugin", "authParams" in "values.yaml"
+```bash
+waiting me
+```
 ### You can edit pvc storage
 ```bash
 helm upgrade --install milvus milvus/milvus -f values.yaml -n milvus --create-namespace
