@@ -41,7 +41,12 @@ password: <kubectl get secret kafka-user-passwords --namespace kafka -o jsonpath
 ```
 ### Fill externalPulsar with value: "host", "authPlugin", "authParams" in "values.yaml"
 ```bash
-waiting me
+host: <ip_of_service_pulsar-proxy_in_namespace_pulsar>
+authPlugin: "org.apache.pulsar.broker.authorization.PulsarAuthorizationProvider"
+authParams: <
+kubectl get secret -n pulsar pulsar-token-admin -o yaml
+echo "$TOKEN" | base64 --decode
+>
 ```
 ### You can edit pvc storage in each file "values"
 
